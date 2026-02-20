@@ -1,0 +1,12 @@
+# Propagate the global settings.
+__include__:
+  - '../{current-file-name}'
+
+# Current component settings.
+component:
+  type: 'static-library'                            # Required, one of: static-library, shared-library, console-application, desktop-application
+  name: '{current-folder-name}'                     # Name of component.
+  title: '{product/title}'                          # The title of application.
+  path: '{current-folder-path}'                     # Root path of component.
+  domain: '{collection/domain}.{component/name}'    # Package domain of component.
+  is_whole_archive: true                            # Whether the static library should be processed as whole archive. The setting is viable only for static libraries.
