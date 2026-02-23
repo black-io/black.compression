@@ -7,8 +7,6 @@ inline namespace Compression
 {
 inline namespace Global
 {
-inline namespace Compression
-{
 	/**
 		@brief	Compressor registry implementation.
 
@@ -23,7 +21,10 @@ inline namespace Compression
 	{
 	// Public inner types.
 	public:
-		// Particular compressor class definition.
+		// Basic compressor. All particular compressors should be derived from this type.
+		using BasicCompressor = Internal::BasicCompressor;
+
+		// Particular compressor class definition. Allows to register the particular compressor in registry.
 		template< typename TCompressor >
 		using CompressorDefinition = Configuration::CompressorDefinition<TCompressor>;
 
@@ -63,7 +64,6 @@ inline namespace Compression
 	private:
 		mutable std::vector<const Configuration::BasicRegistryItem*> m_cache; // Cache of registry.
 	};
-}
 }
 }
 }

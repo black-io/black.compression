@@ -7,8 +7,6 @@ inline namespace Compression
 {
 inline namespace Global
 {
-inline namespace Compression
-{
 namespace
 {
 	// Logging channel.
@@ -16,7 +14,7 @@ namespace
 }
 
 
-	Black::Hypothetical<const BasicCompressor&> CompressorRegistry::FindCompressor( std::string_view class_name ) const
+	Black::Hypothetical<const CompressorRegistry::BasicCompressor&> CompressorRegistry::FindCompressor( std::string_view class_name ) const
 	{
 		EnsureRegistryCached();
 
@@ -29,7 +27,7 @@ namespace
 				return registry_item->GetNameHash() == name_hash;
 			}
 		).Transform(
-			[class_name]( const Configuration::BasicRegistryItem* registry_item ) -> const Black::BasicCompressor&
+			[class_name]( const Configuration::BasicRegistryItem* registry_item ) -> const BasicCompressor&
 			{
 				EXPECTS_DEBUG( registry_item != nullptr );
 				ENSURES_DEBUG( registry_item->GetName() == class_name );
@@ -60,7 +58,6 @@ namespace
 
 		BLACK_LOG_VERBOSE( LOG_CHANNEL, "Compressor registry cached with {} entities.", m_cache.size() );
 	}
-}
 }
 }
 }

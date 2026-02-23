@@ -12,13 +12,14 @@
 // Most global stuff.
 
 // Generic compression algorithm.
-#include ".global/compression/internal/constants.h"
-#include ".global/compression/internal/structures.h"
+#include ".global/internal/constants.h"
+#include ".global/internal/structures.h"
+#include ".global/internal/BasicCompressor.h"
 
-#include ".global/compression/BasicCompressor.h"
+// Configuration of library.
+#include ".global/configuration/configuration-list-items.h"
+#include ".global/configuration/aliases.h"
+#include ".global/configuration/configuration-options.h"
 
-// Compressor registry.
-#include ".global/compression/configuration/configuration-list-items.h"
-#include ".global/compression/configuration/aliases.h"
-#include ".global/compression/configuration/configuration-options.h"
-#include ".global/compression/CompressorRegistry.h"
+// Implementation of registry.
+#include ".global/CompressorRegistry.h"

@@ -2,6 +2,6 @@
 
 
 // Deferred inline implementations.
-#include ".global/compression/CompressorRegistry.inl"
+#include ".global/CompressorRegistry.inl"
 
-#include ".global/compression/configuration/configuration-list-items.inl"
+#include ".global/configuration/configuration-list-items.inl"

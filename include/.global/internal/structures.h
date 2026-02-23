@@ -7,8 +7,6 @@ inline namespace Compression
 {
 inline namespace Global
 {
-inline namespace Compression
-{
 namespace Internal
 {
 	/**
@@ -36,7 +34,6 @@ namespace Internal
 		Id			id;		// Id used to identify the semantics of value.
 		uint32_t	value;	// Usable value.
 	};
-}
 }
 }
 }

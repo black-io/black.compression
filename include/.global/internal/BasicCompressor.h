@@ -7,7 +7,7 @@ inline namespace Compression
 {
 inline namespace Global
 {
-inline namespace Compression
+namespace Internal
 {
 	/**
 		@brief	Interface of regular compressor.

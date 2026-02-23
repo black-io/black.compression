@@ -7,15 +7,13 @@ inline namespace Compression
 {
 inline namespace Global
 {
-inline namespace Compression
-{
 	template< typename TVisitor >
 	inline void CompressorRegistry::EnumerateCompressors( TVisitor&& visitor ) const
 	{
 		static_assert( std::is_function_v<std::decay_t<TVisitor>>, "Type of given visitor should be functional." );
 		static_assert(
-			std::is_invocable_v<std::decay_t<TVisitor>, const Black::BasicCompressor& >,
-			"Given visitor should satisfy the signature `void ( const Black::BasicCompressor& )`."
+			std::is_invocable_v<std::decay_t<TVisitor>, const Black::CompressorRegistry::BasicCompressor& >,
+			"Given visitor should satisfy the signature `void ( const Black::CompressorRegistry::BasicCompressor& )`."
 		);
 
 
@@ -26,7 +24,6 @@ inline namespace Compression
 			visitor( registry_item->GetCompressor() );
 		}
 	}
-}
 }
 }
 }

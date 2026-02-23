@@ -7,8 +7,6 @@ inline namespace Compression
 {
 inline namespace Global
 {
-inline namespace Compression
-{
 namespace Configuration
 {
 	/**
@@ -27,7 +25,7 @@ namespace Configuration
 	// Public virtual interface.
 	public:
 		// Get the compressor instance stored by this item.
-		virtual const Black::BasicCompressor& GetCompressor() const = 0;
+		virtual const Internal::BasicCompressor& GetCompressor() const = 0;
 
 	// Heirs interface.
 	protected:
@@ -47,7 +45,10 @@ namespace Configuration
 	template< typename TCompressor >
 	class CompressorStorageItem final : public BasicRegistryItem
 	{
-		static_assert( std::is_base_of_v<Black::BasicCompressor, TCompressor>, "Given `TCompressor` should be derived from `Black::BasicCompressor` type." );
+		static_assert(
+			std::is_base_of_v<Internal::BasicCompressor, TCompressor>,
+			"Given `TCompressor` should be derived from `Black::CompressorRegistry::BasicCompressor` type."
+		);
 
 	// Public static interface.
 	public:
@@ -61,13 +62,12 @@ namespace Configuration
 	// Private interface.
 	private:
 		/// @see	BasicRegistryItem::GetCompressor
-		const Black::BasicCompressor& GetCompressor() const override;
+		const Internal::BasicCompressor& GetCompressor() const override;
 
 	// Private state.
 	private:
 		TCompressor m_compressor; // Instance of stored compressor.
 	};
-}
 }
 }
 }

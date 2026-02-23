@@ -7,8 +7,6 @@ inline namespace Compression
 {
 inline namespace Global
 {
-inline namespace Compression
-{
 namespace Configuration
 {
 	/**
@@ -25,7 +23,6 @@ namespace Configuration
 	private:
 		RegistryStorage::Node<CompressorStorageItem<TCompressor>> m_node; // Node to store the compressor.
 	};
-}
 }
 }
 }

@@ -7,8 +7,6 @@ inline namespace Compression
 {
 inline namespace Global
 {
-inline namespace Compression
-{
 namespace Configuration
 {
 	inline BasicRegistryItem::BasicRegistryItem( std::string_view name ) noexcept
@@ -30,11 +28,10 @@ namespace Configuration
 	}
 
 	template< typename TCompressor >
-	const Black::BasicCompressor& CompressorStorageItem<TCompressor>::GetCompressor() const
+	const Internal::BasicCompressor& CompressorStorageItem<TCompressor>::GetCompressor() const
 	{
 		return m_compressor;
 	}
-}
 }
 }
 }

@@ -7,8 +7,6 @@ inline namespace Compression
 {
 inline namespace Global
 {
-inline namespace Compression
-{
 namespace Internal
 {
 	/**
@@ -24,7 +22,6 @@ namespace Internal
 	enum class DecompressionOptionId : uint32_t
 	{
 	};
-}
 }
 }
 }
