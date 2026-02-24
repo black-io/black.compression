@@ -14,6 +14,7 @@
 // Generic compression algorithm.
 #include ".global/internal/constants.h"
 #include ".global/internal/structures.h"
+#include ".global/internal/BasicCompressorInfo.h"
 #include ".global/internal/BasicCompressor.h"
 
 // Configuration of library.

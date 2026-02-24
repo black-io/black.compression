@@ -33,19 +33,27 @@ namespace Internal
 		using InputBuffer = Black::PlainView<const std::byte>;
 
 		// Regular single option for compression algorithm.
-		using CompressionOption = Internal::CompressionOption;
+		using CompressionOption = CompressionOption;
 
 		// List of options to be used as configuration for compression algorithm.
 		using CompressionOptions = Black::PlainView<const CompressionOption>;
 
 		// Regular single option for decompression algorithm.
-		using DecompressionOption = Internal::DecompressionOption;
+		using DecompressionOption = DecompressionOption;
 
 		// List of options to be used as configuration for decompression algorithm.
 		using DecompressionOptions = Black::PlainView<const DecompressionOption>;
 
+		// Type of compressor information.
+		using BasicInfo = BasicCompressorInfo;
+
 	// Public virtual interface.
 	public:
+		/**
+			@brief	Get the information about compressor.
+		*/
+		virtual const BasicInfo& GetInfo() const = 0;
+
 		/**
 			@brief	Perform the compression algorithm.
 
