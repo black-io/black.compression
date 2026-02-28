@@ -14,6 +14,9 @@ namespace Internal
 	*/
 	enum class CompressionOptionId : uint32_t
 	{
+		AlgorithmId		= 0,	// Internal selection of algorithm supported by compressor.
+		AlgorithmLevel,			// Level of selected algorithm.
+		WindowLength,			// Internal meaning of compression window length.
 	};
 
 	/**
@@ -21,6 +24,7 @@ namespace Internal
 	*/
 	enum class DecompressionOptionId : uint32_t
 	{
+		WindowLength	= 0,	// Internal meaning of decompression window length.
 	};
 }
 }
