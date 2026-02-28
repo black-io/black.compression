@@ -10,7 +10,9 @@ inline namespace Global
 namespace Internal
 {
 	/**
-		@brief
+		@brief	Interface of regular information about some particular compressor.
+
+		Object of this interface may be obtained only using `BasicCompressor::GetInfo` method.
 	*/
 	class BasicCompressorInfo
 	{
