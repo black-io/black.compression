@@ -14,7 +14,7 @@ namespace Internal
 
 		Object of this interface may be obtained only using `BasicCompressor::GetInfo` method.
 	*/
-	class BasicCompressorInfo
+	class BasicCompressorInfo : private Black::NonTransferable
 	{
 	// Public inner types.
 	public:
