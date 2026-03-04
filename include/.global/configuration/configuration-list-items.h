@@ -17,21 +17,21 @@ namespace Configuration
 	// Public interface.
 	public:
 		// Get the hash of compressor name.
-		inline const size_t GetNameHash() const			{ return m_name_hash; };
+		inline const size_t GetNameHash() const							{ return m_name_hash; };
 
 		// Get the name of stored compressor.
-		inline const std::string_view GetName() const	{ return m_name; };
+		inline const std::string_view GetName() const					{ return m_name; };
 
 	// Public virtual interface.
 	public:
 		// Get the compressor instance stored by this item.
-		virtual const Internal::BasicCompressor& GetCompressor() const = 0;
+		virtual const Internal::BasicCompressor& GetCompressor() const	= 0;
 
-	// Heirs interface.
+	// Heirs life-time management.
 	protected:
 		inline BasicRegistryItem( std::string_view name ) noexcept;
 
-	// private state.
+	// Private state.
 	private:
 		size_t				m_name_hash;	// Hash of stored compressor name.
 		std::string_view	m_name;			// Name of stored compressor.
